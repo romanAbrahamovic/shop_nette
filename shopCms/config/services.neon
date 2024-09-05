@@ -1,0 +1,13 @@
+services:
+    - App\Http\ApiResponseFormatter
+    - App\Routing\RouterFactory
+    - App\Service\AnimalService
+
+    - App\Repository\XmlAnimalRepository(
+          %appDir%/Data/animals.xml,
+          @App\Utils\XmlSerializer
+      )
+
+    - App\Utils\XmlSerializer
+
+    router: @App\Routing\RouterFactory::create

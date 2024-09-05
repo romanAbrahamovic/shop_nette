@@ -1,0 +1,20 @@
+parameters:
+
+application:
+    errorPresenter: Error
+    scanDirs: false
+    mapping:
+        Api: App\Api\*Presenter   # Mapovanie pre API presentery
+        UI: App\UI\*\*Presenter   # Mapovanie pre UI presentery
+
+
+latte:
+	strictTypes: yes
+	strictParsing: yes
+	extensions:
+		- App\UI\Accessory\LatteExtension
+
+di:
+	export:
+		parameters: no
+		tags: no
